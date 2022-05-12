@@ -30,10 +30,10 @@ export class CreateClientModel {
     if (!cpf) {
       throw new Error("CPF is required!")
     }
-    if (!cpf) {
+    if (!e_mail) {
       throw new Error("E-mail is required!")
     }
-    if (!cpf) {
+    if (!cep) {
       throw new Error("CEP is required!")
     }
     const clientExist = await prisma.cliente.findFirst({
