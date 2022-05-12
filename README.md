@@ -1,4 +1,3 @@
-# AppFinanceiroBackEnd
 # projeto
 yarn
 
