@@ -16,8 +16,8 @@ model Cliente {
   sobrenome String
   cpf Int @unique
   e_mail String
-  telefone_fixo Int
-  telefone_movel Int
+  telefone_fixo Int?
+  telefone_movel Int?
   cep Int
   ativo Boolean @default(true)
 

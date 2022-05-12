@@ -5,8 +5,8 @@ interface ICreateClient {
   sobrenome: string;
   cpf: number;
   e_mail: string;
-  telefone_fixo:number;
-  telefone_movel:number;
+  telefone_fixo?:number;
+  telefone_movel?:number;
   cep:number;
 }
 
@@ -20,6 +20,22 @@ export class CreateClientModel {
     telefone_movel,
     cep
   }:ICreateClient) {
+
+    if (!nome) {
+      throw new Error("Nome is required!")
+    }
+    if (!sobrenome) {
+      throw new Error("Sobrenome is required!")
+    }
+    if (!cpf) {
+      throw new Error("CPF is required!")
+    }
+    if (!cpf) {
+      throw new Error("E-mail is required!")
+    }
+    if (!cpf) {
+      throw new Error("CEP is required!")
+    }
     const clientExist = await prisma.cliente.findFirst({
       where:{
         cpf: {
