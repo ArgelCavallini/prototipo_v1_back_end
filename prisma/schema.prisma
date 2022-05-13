@@ -23,3 +23,12 @@ model Cliente {
 
   @@map("cliente")
 }
+
+model Usuario {
+  id       String @id @default(uuid())
+  username String @unique
+  password String
+  ativo Boolean @default(true)
+
+  @@map("usuario")
+}

@@ -9,3 +9,6 @@ yarn dev
 
 # banco no navegador pelo prisma
 yarn prisma studio
+
+# conf. docker
+https://felixgilioli.medium.com/como-rodar-um-banco-de-dados-postgres-com-docker-6aecf67995e1

@@ -5,7 +5,8 @@ import { routes } from "../routes";
 
 const app = express();
 
-app.options('*', cors());
+// habilitado para qualquer origem
+app.use(cors());
 
 app.use(express.json());
 
