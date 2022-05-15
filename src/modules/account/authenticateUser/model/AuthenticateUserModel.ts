@@ -11,10 +11,12 @@ export class AuthenticateUserModel {
   // Recever username, password
   async execute({ username, password }: IAuthenticateUser) {
 
+    username = username.toString();
+
     // Verificar se username cadastrado
     const user = await prisma.usuario.findFirst({
       where: {
-        username
+        username: username
       }
     });
     if (!user) {
@@ -22,7 +24,7 @@ export class AuthenticateUserModel {
     }
 
     // Verificar se senha corresponde ao username
-    const passwordMatch = await compare(password, user.password)
+    const passwordMatch = await compare(password.toString(), user.password)
     if (!passwordMatch) {
       throw new Error("Username or password invalid!")
     }
