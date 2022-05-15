@@ -4,10 +4,15 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/services/server.ts"
+    "dev": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/services/server.ts",
+    "start": "nodemon dist/index.js",
+    "build:watch": "tsc -w",
+    "build": "tsc",
+    "deploy": "git add . && git commit -m Heroku && git push heroku master"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
+    "@types/express": "^4.17.13",
     "@types/jsonwebtoken": "^8.5.6",
     "prisma": "^3.7.0",
     "ts-node-dev": "^1.1.8",
@@ -16,13 +21,13 @@
   "dependencies": {
     "-": "^0.0.1",
     "@prisma/client": "^3.7.0",
-    "@types/express": "^4.17.13",
+    "D": "^1.0.0",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
-    "D": "^1.0.0",
     "express": "^4.17.2",
     "express-async-errors": "^3.1.1",
     "jsonwebtoken": "^8.5.1",
-    "jwt": "^0.2.0"
+    "jwt": "^0.2.0",
+    "nodemon": "^2.0.16"
   }
 }
