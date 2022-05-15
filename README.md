@@ -17,5 +17,10 @@ https://felixgilioli.medium.com/como-rodar-um-banco-de-dados-postgres-com-docker
 heroku config --app PROJETO_NA_HEROKU (Primeira vez obter host)
 yarn prisma db push
 
+# subir no heroku
+git push heroku main
+# executar dynos da web
+heroku ps:scale web=1
+
 # prisma studio
 yarn prisma studio
