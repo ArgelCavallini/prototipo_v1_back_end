@@ -11,12 +11,10 @@ export class AuthenticateUserModel {
   // Recever username, password
   async execute({ username, password }: IAuthenticateUser) {
 
-    username = username.toString();
-
     // Verificar se username cadastrado
     const user = await prisma.usuario.findFirst({
       where: {
-        username: username
+        username: username.toString()
       }
     });
     if (!user) {
