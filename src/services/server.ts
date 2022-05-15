@@ -25,4 +25,4 @@ app.use((err: Error, request: Request, response: Response, next: NextFunction) =
   });
 })
 
-app.listen(4000, () => console.log("Deu boa..."))
+app.listen(process.env.PORT || 4000, () => console.log("Deu boa..."))
